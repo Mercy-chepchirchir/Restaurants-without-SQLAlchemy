@@ -10,6 +10,10 @@ class Restaurant:
             
     def name (self):
         return self._name 
+     
+restaurant = Restaurant("Copper Ivy")   
+print(restaurant.name())
+
     
         
         
