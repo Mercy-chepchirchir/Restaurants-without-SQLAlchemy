@@ -7,6 +7,9 @@ class Restaurant:
     def set_name (self,name):
         if isinstance (name,str):
             self._name = name
-  
+            
+    def name (self):
+        return self._name 
+    
         
         
