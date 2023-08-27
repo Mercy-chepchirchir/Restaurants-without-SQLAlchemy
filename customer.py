@@ -35,3 +35,24 @@ class Customer:
     
     full_name = property(get_full_name, set_full_name)
             
+# the all class method returns the list of all customer instances          
+    @classmethod
+    def all(cls):
+        return cls.all_customers
+            
+    def __str__(self):
+        return self._full_name
+    
+mycustomer = Customer("Mercy", "Tonui")
+newCustomer = Customer("Mercy", "Chepchirchir")
+
+
+
+# printing customer information
+all_customers = Customer.all()
+for customer in all_customers:
+    print(customer.full_name)
+       
+
+print(all_customers)
+print(mycustomer)
