@@ -94,10 +94,10 @@ print(all_customers)
 print(mycustomer)
 
 
-restaurant1 = Restaurant("Cooper VY")
+# restaurant1 = Restaurant("Cooper Ivy")
 
-customer1 = Customer("Chiri", "Tonui")
-customer1.add_review(restaurant1, 7)
+# customer1 = Customer("Chiri", "Tonui")
+# customer1.add_review(restaurant1, 7)
 
-for review in restaurant1.reviews():
-    print(review.rating)
+# for review in restaurant1.reviews():
+#     print(review.rating)
