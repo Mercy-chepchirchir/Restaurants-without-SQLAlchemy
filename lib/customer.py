@@ -1,5 +1,4 @@
 from review import Review
-from restaurant import Restaurant
 
 class Customer:
     all_customers = [] #used to store all instances of customer
