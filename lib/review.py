@@ -1,33 +1,34 @@
 class Review:
-# all reviews is an empty list so that it will be used to store all instances of reviews.
-    all_reviews = [] 
+# reviews is an empty list so that it will be used to store all instances of reviews.
+    reviews = [] 
     
     def __init__ (self, customer, restaurant, rating=None):
         self._customer = customer
         self._restaurant = restaurant
         self._rating = None
-        Review.all_reviews.append(self)  # Adding the review to the all_reviews list
+         # Adding the review to the reviews list
+        Review.reviews.append(self)  
 
         if rating is not None:
             self.set_rating(rating)
    
-    # set_rating method allows rating only if the provided value is an integer
+    # set_rating method allows rating only if the provided value is a number
     def set_rating(self, rating):
-        if isinstance (rating,int):
+        if isinstance (rating,(int, float)):
             self._rating = rating
             
         else:
-            print("Rating must be an integer")
+            print("Rating must be a number")
             
      # return the rating
     def get_rating(self):
         return self._rating   
 
     rating = property(get_rating, set_rating)
-    
+# returns customer object for that review
     def customer(self):
         return self._customer
-    
+# returns the restaurant object for that review
     def restaurant(self):
         return self._restaurant
             
@@ -35,7 +36,10 @@ class Review:
     #  the  method all() takes the class itself as the an argument(cls) method returns all reviews that have been created
     @classmethod
     def all(cls):
-        return cls.all_reviews
+        return cls.reviews
+    
+    def __repr__(self):
+        return f"{self._customer} ,{self._restaurant} {self._rating}"
     
 # creating an instance of the review class
 myreview = Review("mercy", "Copper Ivy", 12)
@@ -45,9 +49,19 @@ newreview = Review("Chirie", "Red Ginger", 10)
 print(myreview.rating)
 print(newreview.rating)
 
+# getting the customer reviews
+print(myreview.customer())
+print(newreview.customer())
+
+# getting the restaurant reviews
+print(myreview.restaurant())
+print(newreview.restaurant())
+
 # getting all the reviews
-all_reviews = Review.all()
-print(all_reviews)
+print(myreview)  
+print(newreview)
+
+
 
         
         
