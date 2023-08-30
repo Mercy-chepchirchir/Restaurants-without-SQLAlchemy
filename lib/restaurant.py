@@ -29,4 +29,5 @@ class Restaurant:
      
 restaurant1 = Restaurant("Copper Ivy")   
 print(restaurant1.name())
+
     
